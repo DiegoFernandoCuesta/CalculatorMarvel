@@ -1,0 +1,28 @@
+PODS:
+  - Alamofire (4.8.0)
+  - SwiftTryCatch (1.0.0)
+
+DEPENDENCIES:
+  - Alamofire
+  - SwiftTryCatch (from `https://github.com/ravero/SwiftTryCatch.git`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+
+EXTERNAL SOURCES:
+  SwiftTryCatch:
+    :git: https://github.com/ravero/SwiftTryCatch.git
+
+CHECKOUT OPTIONS:
+  SwiftTryCatch:
+    :commit: 46ca643dc8b9e47482437e906b30952712e8e232
+    :git: https://github.com/ravero/SwiftTryCatch.git
+
+SPEC CHECKSUMS:
+  Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
+  SwiftTryCatch: fc83ba75e26f7207749b568c50965218d99e1571
+
+PODFILE CHECKSUM: 2738e73fa9f64a3469b3063790d0469bfbfe5d25
+
+COCOAPODS: 1.5.3
