@@ -9,9 +9,11 @@
 import XCTest
 @testable import Calculator
 
-class CalculatorTests: XCTestCase {
-
+class CalculatorTests: XCTestCase , CalculatorProtocol {
+    
     override func setUp() {
+        validateMathOperationOk()
+        validateMathMultipleOk()
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
 
@@ -19,9 +21,22 @@ class CalculatorTests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func validateMathOperationOk() {
+        let operation = "5+10*(6)"
+        let response  = "65"
+        let viewmodel = CalculatorViewModel(delegate: self)
+        let numberStr = viewmodel.runOperation(operation: operation, returnResult: true)
+        XCTAssertEqual(numberStr, response ,"Hubo un error al ejecutar el test.")
+    }
+    
+    func validateMathMultipleOk(){
+        let operation = "5+10*(6)"
+        let response  = "Comics"
+        let viewmodel = CalculatorViewModel(delegate: self)
+        let numberStr = viewmodel.runOperation(operation: operation, returnResult: true)
+        let category = viewmodel.obtainMultiple(numberStr: numberStr!)
+        XCTAssertEqual(category, response ,"Hubo un error al ejecutar el test.")
+
     }
 
     func testPerformanceExample() {

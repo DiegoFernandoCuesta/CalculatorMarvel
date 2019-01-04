@@ -9,16 +9,16 @@
 import Foundation
 import SwiftTryCatch
 
-protocol CalculatorProtocol : class {
-    func updateOperationLabel( newValue: String )
-    func updateOperationFailed( newValue: String )
-    func resultFailed( newValue: String )
+@objc protocol CalculatorProtocol : class {
+    @objc optional func updateOperationLabel( newValue: String )
+    @objc optional func updateOperationFailed( newValue: String )
+    @objc optional func resultFailed( newValue: String )
 }
 
-enum NumberValue: Int, CaseIterable {
+enum Number: Int, CaseIterable {
     case one   = 1
     case two   = 2
-    case tree  = 3
+    case three = 3
     case four  = 4
     case five  = 5
     case six   = 6
@@ -26,6 +26,13 @@ enum NumberValue: Int, CaseIterable {
     case eight = 8
     case nine  = 9
     case zero  = 0
+    
+    case eleven   = 11
+    case thirteen = 13
+
+    static func value(_ value: Number) -> Int {
+        return value.rawValue
+    }
 }
 
 enum operationValue : String, CaseIterable{
@@ -53,6 +60,7 @@ class CalculatorViewModel {
     
     var operationInDisplay: String = ""
     var isOperationKeyboard: Bool = false
+    var activeOperation: Bool = false
     weak var delegate : CalculatorProtocol?
     
     let digits = CharacterSet.decimalDigits
@@ -60,7 +68,7 @@ class CalculatorViewModel {
     init(delegate: CalculatorProtocol ) { self.delegate = delegate }
     
     func getNumberToTag(tag: Int) -> String? {
-        for number in NumberValue.allCases {
+        for number in Number.allCases {
             if number.rawValue == tag {
                 if let beforeChar = operationInDisplay.unicodeScalars.last {
                     if String(beforeChar) == specialCharacters.value(.rightParenthes){
@@ -74,6 +82,10 @@ class CalculatorViewModel {
     }
 
     func getOperationToTag(tag: Int) -> String? {
+        
+        activeOperation = !activeOperation
+        getResult()
+        
         switch tag {
         case 1:
             return operationValue.value(.sum)
@@ -101,7 +113,10 @@ class CalculatorViewModel {
         case 1:
             if let beforeChar = operationInDisplay.unicodeScalars.last {
                 if digits.contains(beforeChar){ value = specialCharacters.value(.leftParenthes)
-                break }
+                    break }
+                if beforeChar.description == specialCharacters.value(.rightParenthes){
+                    value = specialCharacters.value(.leftParenthes)
+                    break }
             }
             validateOperation( )
             return specialCharacters.value(.leftParenthes)
@@ -109,6 +124,7 @@ class CalculatorViewModel {
             validateOperation( )
             return specialCharacters.value(.rightParenthes)
         case 3:
+            validateOperation( )
             return specialCharacters.value(.dot)
         default:
             return beforeValue
@@ -123,7 +139,8 @@ class CalculatorViewModel {
     
     func clearOperation(){
         operationInDisplay = ""
-        delegate?.updateOperationLabel(newValue: operationInDisplay)
+        activeOperation = false
+        delegate?.updateOperationLabel!(newValue: operationInDisplay)
     }
     
     func getResult( ) {
@@ -157,21 +174,38 @@ class CalculatorViewModel {
         operationInDisplay = clearresultstring
     }
     
-    private func validateOperation( returnResult: Bool = false){
+    func obtainMultiple(numberStr: String)-> String? {
+        guard let number = Int(numberStr) else { return nil }
+        if number == Number.value(.zero) { return "Characters" }
+        if (number % Number.value(.three))    == Number.value(.zero) { return "Comics" }
+        if (number % Number.value(.five))     == Number.value(.zero) { return "Comics" }
+        if (number % Number.value(.seven))    == Number.value(.zero) { return "Creators" }
+        if (number % Number.value(.eleven))   == Number.value(.zero) { return "Events" }
+        if (number % Number.value(.thirteen)) == Number.value(.zero) { return "Series" }
+        return "Stories"
+    }
+    
+    func runOperation(operation: String, returnResult: Bool) -> String? {
+        let expression = NSExpression(format: operation)
+        if let result = expression.expressionValue(with: nil, context: nil) as? NSNumber {
+            return String(result.stringValue)
+        }
+        return nil
+    }
+    
+    func validateOperation( returnResult: Bool = false){
         SwiftTryCatch.try ({
-            let expression = NSExpression(format: self.operationInDisplay)
-            if let result = expression.expressionValue(with: nil, context: nil) as? NSNumber {
-                if returnResult {
-                    self.operationInDisplay = String(result.stringValue)
-                }
-                self.delegate?.updateOperationLabel(newValue: self.operationInDisplay)
+            let resultValue = self.runOperation(operation: self.operationInDisplay, returnResult: returnResult)!
+            if returnResult || ( returnResult && !self.activeOperation ){
+                self.operationInDisplay = resultValue
             }
+            self.delegate?.updateOperationLabel!(newValue: self.operationInDisplay)
         }, catch: { (error) in
             if returnResult {
-                self.delegate?.resultFailed(newValue: self.operationInDisplay)
+                self.delegate?.resultFailed!(newValue: self.operationInDisplay)
                 return
             }
-            self.delegate?.updateOperationFailed(newValue: self.operationInDisplay )
+            self.delegate?.updateOperationFailed!(newValue: self.operationInDisplay )
         }, finallyBlock: { })
     }
 }

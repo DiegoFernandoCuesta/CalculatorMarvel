@@ -9,13 +9,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Calculator/Operation/CalculatorViewModel.swift"
-            timestampString = "568226222.5784971"
+            filePath = "CalculatorTests/CalculatorTests.swift"
+            timestampString = "568252743.363149"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "getSpecialCharacterTag(tag:)"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "validateMathOperationOk()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

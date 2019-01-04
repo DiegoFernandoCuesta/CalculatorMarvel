@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "CalculatorViewModel.getOperationToTag(tag:):CalculatorViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "activeOperation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "closure #1 in CalculatorViewModel.validateOperation(returnResult:):CalculatorViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "activeOperation">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>
