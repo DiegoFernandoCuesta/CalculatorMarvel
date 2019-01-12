@@ -10,12 +10,154 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "CalculatorTests/CalculatorTests.swift"
-            timestampString = "568252743.363149"
+            timestampString = "569008708.432211"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "24"
             endingLineNumber = "24"
             landmarkName = "validateMathOperationOk()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Calculator/MarvelComics/View/MarvelDetailViewController.swift"
+            timestampString = "569006142.109061"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "setDataBinding()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Calculator.MarvelDetailViewController.setDataBinding() -&gt; ()"
+                  moduleName = "Calculator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegofernandocuesta/Downloads/Calculator/Calculator/MarvelComics/View/MarvelDetailViewController.swift"
+                  timestampString = "569008708.454828"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Calculator.MarvelDetailViewController.setDataBinding() -&gt; ()"
+                  moduleName = "Calculator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegofernandocuesta/Downloads/Calculator/Calculator/MarvelComics/View/MarvelDetailViewController.swift"
+                  timestampString = "569008708.463058"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CalculatorTests.MarvelDetailViewController.setDataBinding() -&gt; ()"
+                  moduleName = "CalculatorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegofernandocuesta/Downloads/Calculator/Calculator/MarvelComics/View/MarvelDetailViewController.swift"
+                  timestampString = "569008711.123188"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in CalculatorTests.MarvelDetailViewController.setDataBinding() -&gt; ()"
+                  moduleName = "CalculatorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegofernandocuesta/Downloads/Calculator/Calculator/MarvelComics/View/MarvelDetailViewController.swift"
+                  timestampString = "569008711.129389"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "44">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Calculator/MarvelComics/View/MarvelTableViewController.swift"
+            timestampString = "569008708.432441"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "setBindingData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in Calculator.MarvelTableViewController.setBindingData() -&gt; ()"
+                  moduleName = "Calculator"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegofernandocuesta/Downloads/Calculator/Calculator/MarvelComics/View/MarvelTableViewController.swift"
+                  timestampString = "569008708.482717"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 () -&gt; () in CalculatorTests.MarvelTableViewController.setBindingData() -&gt; ()"
+                  moduleName = "CalculatorTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/diegofernandocuesta/Downloads/Calculator/Calculator/MarvelComics/View/MarvelTableViewController.swift"
+                  timestampString = "569008711.138953"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "50"
+                  endingLineNumber = "50"
+                  offsetFromSymbolStart = "52">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CalculatorUITests/CalculatorUITests.swift"
+            timestampString = "569008708.432608"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "testTableInteraction()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

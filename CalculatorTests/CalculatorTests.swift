@@ -31,11 +31,11 @@ class CalculatorTests: XCTestCase , CalculatorProtocol {
     
     func validateMathMultipleOk(){
         let operation = "5+10*(6)"
-        let response  = "Comics"
+        let response  = TypeList.Comic.rawValue
         let viewmodel = CalculatorViewModel(delegate: self)
         let numberStr = viewmodel.runOperation(operation: operation, returnResult: true)
-        let category = viewmodel.obtainMultiple(numberStr: numberStr!)
-        XCTAssertEqual(category, response ,"Hubo un error al ejecutar el test.")
+        guard let category = viewmodel.obtainMultiple(numberStr: numberStr!) else { return }
+        XCTAssertEqual(category.rawValue, response ,"Hubo un error al ejecutar el test.")
 
     }
 

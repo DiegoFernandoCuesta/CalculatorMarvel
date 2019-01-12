@@ -9,6 +9,11 @@ target 'Calculator' do
 
   pod 'Alamofire'
   pod 'SwiftTryCatch', :git => 'https://github.com/ravero/SwiftTryCatch.git'
+  pod 'AlamofireObjectMapper', '~> 5.0'
+  pod 'AlamofireImage'
+  pod 'Material'
+  pod 'lottie-ios'
+  pod 'SwiftyJSON'
 
   target 'CalculatorTests' do
     inherit! :search_paths

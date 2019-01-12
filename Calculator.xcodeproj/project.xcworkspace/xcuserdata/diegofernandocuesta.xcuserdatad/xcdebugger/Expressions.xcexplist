@@ -11,6 +11,17 @@
          </PersistentStrings>
       </ContextState>
       <ContextState
+         contextName = "String.format(_:):Utils.swift">
+      </ContextState>
+      <ContextState
+         contextName = "MarvelTableViewModel.getUrlImage(index:):MarvelTableViewModel.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "storie.image.getImgSquareUrl() ">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
          contextName = "closure #1 in CalculatorViewModel.validateOperation(returnResult:):CalculatorViewModel.swift">
          <PersistentStrings>
             <PersistentString

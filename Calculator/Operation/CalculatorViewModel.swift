@@ -174,15 +174,15 @@ class CalculatorViewModel {
         operationInDisplay = clearresultstring
     }
     
-    func obtainMultiple(numberStr: String)-> String? {
-        guard let number = Int(numberStr) else { return nil }
-        if number == Number.value(.zero) { return "Characters" }
-        if (number % Number.value(.three))    == Number.value(.zero) { return "Comics" }
-        if (number % Number.value(.five))     == Number.value(.zero) { return "Comics" }
-        if (number % Number.value(.seven))    == Number.value(.zero) { return "Creators" }
-        if (number % Number.value(.eleven))   == Number.value(.zero) { return "Events" }
-        if (number % Number.value(.thirteen)) == Number.value(.zero) { return "Series" }
-        return "Stories"
+    func obtainMultiple(numberStr: String)-> TypeList? {
+        guard let number = Int(numberStr) else { return TypeList.Stories }
+        if number == Number.value(.zero) { return TypeList.Character }
+        if (number % Number.value(.three))    == Number.value(.zero) { return TypeList.Comic }
+        if (number % Number.value(.five))     == Number.value(.zero) { return TypeList.Comic }
+        if (number % Number.value(.seven))    == Number.value(.zero) { return TypeList.Creators }
+        if (number % Number.value(.eleven))   == Number.value(.zero) { return TypeList.Events }
+        if (number % Number.value(.thirteen)) == Number.value(.zero) { return TypeList.Series }
+        return TypeList.Stories
     }
     
     func runOperation(operation: String, returnResult: Bool) -> String? {

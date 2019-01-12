@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3FD1F2618285F0DFEC5C43FB0979EC0B"
+               BlueprintIdentifier = "72A3AB0EB3EF82EDBBF2D6F60367ADA0"
                BlueprintName = "SwiftTryCatch"
                ReferencedContainer = "container:Pods.xcodeproj"
                BuildableName = "SwiftTryCatch.framework">

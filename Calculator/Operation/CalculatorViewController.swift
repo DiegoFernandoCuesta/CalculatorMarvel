@@ -22,6 +22,11 @@ class CalculatorViewController : UIViewController {
         settingUi()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+        viewModel.clearOperation()
+    }
+    
     private func settingUi(){
         operationTextViewLabel.delegate = self
         operationTextViewLabel.tintColor = UIColor.clear
@@ -46,6 +51,7 @@ class CalculatorViewController : UIViewController {
     
     @IBAction func equalValue(sender: UIButton){
         viewModel.getResult()
+        performSegue(withIdentifier: Constants.MarvelTableSegue, sender: nil)
     }
     
     @IBAction func clearOpeartion(sender: UIButton){
@@ -62,6 +68,13 @@ class CalculatorViewController : UIViewController {
         containerButtons.isHidden = sender.isOn
         equalsBtn.isHidden = !sender.isOn
         operationTextViewLabel.isUserInteractionEnabled = sender.isOn
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == Constants.MarvelTableSegue {
+            let vc: MarvelTableViewController = segue.destination as! MarvelTableViewController
+            vc.setTypeData(type: viewModel.obtainMultiple(numberStr: viewModel.operationInDisplay)!)
+        }
     }
     
 }
